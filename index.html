@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kohinoor – Riddhi Siddhi Tiara | Ambegaon Budruk, Pune</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #c9a84c;
+    --gold-light: #e2c97e;
+    --gold-dim: #7a5e2a;
+    --brown-dark: #1a0f05;
+    --brown-mid: #2e1a0a;
+    --brown: #4a2c10;
+    --cream: #f7f0e6;
+    --cream-dim: #e8d9c4;
+    --text-muted: #b89f80;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--brown-dark);
+    color: var(--cream);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 900;
+    padding: 1.5rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, rgba(26,15,5,0.95), transparent);
+    transition: background 0.4s;
+  }
+  nav.scrolled {
+    background: rgba(26,15,5,0.97);
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .nav-logo span {
+    font-weight: 300;
+    font-style: italic;
+    color: var(--cream-dim);
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    display: block;
+    text-transform: uppercase;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+  .nav-links a {
+    color: var(--cream-dim);
+    text-decoration: none;
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta {
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 0.55rem 1.6rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+  }
+  .nav-cta:hover {
+    background: var(--gold);
+    color: var(--brown-dark);
+  }
+
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: 8rem 2rem 4rem;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 60%, rgba(201,168,76,0.08) 0%, transparent 70%),
+      radial-gradient(ellipse 100% 100% at 50% 100%, rgba(74,44,16,0.6) 0%, transparent 60%),
+      linear-gradient(160deg, #1a0f05 0%, #2e1a0a 50%, #1a0f05 100%);
+  }
+  .diamond-bg {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%) rotate(45deg);
+    width: 600px; height: 600px;
+    border: 1px solid rgba(201,168,76,0.06);
+    animation: spin-slow 60s linear infinite;
+  }
+  .diamond-bg::before {
+    content:'';
+    position: absolute;
+    inset: 40px;
+    border: 1px solid rgba(201,168,76,0.04);
+  }
+  @keyframes spin-slow { to { transform: translate(-50%,-50%) rotate(calc(45deg + 360deg)); } }
+
+  .hero-content { position: relative; z-index: 2; max-width: 900px; }
+  .hero-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 0.9s 0.3s forwards;
+  }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(5rem, 14vw, 11rem);
+    font-weight: 300;
+    line-height: 0.9;
+    letter-spacing: -0.01em;
+    color: var(--cream);
+    opacity: 0;
+    animation: fadeUp 1s 0.5s forwards;
+  }
+  .hero-title em {
+    color: var(--gold);
+    font-style: italic;
+  }
+  .hero-subtitle {
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    opacity: 0;
+    animation: fadeUp 0.9s 0.8s forwards;
+  }
+  .hero-divider {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 2rem auto;
+    opacity: 0;
+    animation: fadeIn 1s 1s forwards;
+  }
+  .hero-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--cream-dim);
+    opacity: 0;
+    animation: fadeUp 0.9s 1.1s forwards;
+  }
+  .hero-ctas {
+    margin-top: 3rem;
+    display: flex;
+    gap: 1.2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.9s 1.3s forwards;
+  }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--brown-dark);
+    padding: 0.9rem 2.4rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .btn-ghost {
+    background: transparent;
+    color: var(--cream);
+    padding: 0.9rem 2.4rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border: 1px solid rgba(247,240,230,0.3);
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: inline-block;
+  }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+  .hero-stats {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(201,168,76,0.15);
+    opacity: 0;
+    animation: fadeUp 0.9s 1.5s forwards;
+  }
+  .hero-stat { text-align: center; }
+  .hero-stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .hero-stat-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 0.4rem;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; } to { opacity: 1; }
+  }
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  section { padding: 7rem 4rem; }
+  .section-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--cream);
+    margin-bottom: 1.5rem;
+  }
+  .section-title em { font-style: italic; color: var(--gold); }
+  .section-body {
+    font-size: 0.92rem;
+    line-height: 1.9;
+    color: var(--text-muted);
+    max-width: 540px;
+  }
+
+  #about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .about-visual { position: relative; }
+  .about-img-frame {
+    width: 100%;
+    aspect-ratio: 4/5;
+    background: linear-gradient(135deg, var(--brown) 0%, var(--brown-mid) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .about-img-frame::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(135deg, rgba(201,168,76,0.12) 0%, transparent 50%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M30 0 L60 30 L30 60 L0 30Z' fill='none' stroke='rgba(201,168,76,0.05)' stroke-width='1'/%3E%3C/svg%3E");
+  }
+  .about-img-inner {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .about-accent {
+    position: absolute;
+    top: -1.5rem; right: -1.5rem;
+    width: 120px; height: 120px;
+    border: 1px solid rgba(201,168,76,0.3);
+    transform: rotate(45deg);
+  }
+  .about-accent::before {
+    content: '';
+    position: absolute;
+    inset: 15px;
+    border: 1px solid rgba(201,168,76,0.15);
+  }
+  .about-badge {
+    position: absolute;
+    bottom: -1.5rem; left: -1.5rem;
+    background: var(--gold);
+    color: var(--brown-dark);
+    padding: 1.5rem;
+    text-align: center;
+  }
+  .about-badge-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1;
+  }
+  .about-badge-text {
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 0.3rem;
+  }
+
+  #location {
+    background: var(--brown-mid);
+    border-top: 1px solid rgba(201,168,76,0.1);
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+  }
+  .location-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+  .location-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+  .loc-card {
+    padding: 1.5rem;
+    border: 1px solid rgba(201,168,76,0.12);
+    background: rgba(201,168,76,0.03);
+    transition: border-color 0.3s, background 0.3s;
+  }
+  .loc-card:hover {
+    border-color: rgba(201,168,76,0.3);
+    background: rgba(201,168,76,0.06);
+  }
+  .loc-card-icon { font-size: 1.3rem; margin-bottom: 0.7rem; }
+  .loc-card-title {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .loc-card-items {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+  .loc-card-items span {
+    display: flex;
+    justify-content: space-between;
+  }
+  .loc-card-items span em {
+    font-style: normal;
+    color: var(--cream-dim);
+  }
+  .map-placeholder {
+    background: linear-gradient(135deg, var(--brown) 0%, var(--brown-dark) 100%);
+    border: 1px solid rgba(201,168,76,0.15);
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .map-placeholder::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Ccircle cx='20' cy='20' r='0.5' fill='rgba(201,168,76,0.2)'/%3E%3C/svg%3E");
+  }
+  .map-pin {
+    width: 16px; height: 16px;
+    background: var(--gold);
+    border-radius: 50%;
+    box-shadow: 0 0 0 6px rgba(201,168,76,0.2), 0 0 0 12px rgba(201,168,76,0.08);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 6px rgba(201,168,76,0.2), 0 0 0 12px rgba(201,168,76,0.08); }
+    50% { box-shadow: 0 0 0 10px rgba(201,168,76,0.15), 0 0 0 20px rgba(201,168,76,0.04); }
+  }
+  .map-address {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  #amenities {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  #amenities .section-title { margin: 0 auto 1rem; }
+  #amenities .section-body { margin: 0 auto 4rem; }
+  .amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: rgba(201,168,76,0.1);
+    border: 1px solid rgba(201,168,76,0.1);
+  }
+  .amenity-item {
+    background: var(--brown-dark);
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    transition: background 0.3s;
+    cursor: default;
+  }
+  .amenity-item:hover { background: rgba(201,168,76,0.05); }
+  .amenity-emoji { font-size: 1.8rem; margin-bottom: 1rem; }
+  .amenity-name {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--cream-dim);
+  }
+
+  #plans {
+    background: linear-gradient(180deg, var(--brown-mid) 0%, var(--brown-dark) 100%);
+    border-top: 1px solid rgba(201,168,76,0.1);
+  }
+  .plans-inner { max-width: 1200px; margin: 0 auto; }
+  .plans-tabs {
+    display: flex;
+    gap: 0;
+    margin: 3rem 0 2rem;
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+  .plans-tab {
+    padding: 0.8rem 2.5rem;
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    transition: all 0.3s;
+  }
+  .plans-tab.active { color: var(--gold); border-bottom-color: var(--gold); }
+  .plan-content { display: none; }
+  .plan-content.active { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+
+  .plan-visual {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(201,168,76,0.12);
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .plan-visual-inner { width: 75%; height: 75%; position: relative; }
+
+  .plan-specs { padding: 1rem 0; }
+  .plan-type-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    margin-bottom: 0.3rem;
+  }
+  .plan-type-sub {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+  .plan-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+  .plan-detail {
+    padding: 1.2rem;
+    border: 1px solid rgba(201,168,76,0.12);
+  }
+  .plan-detail-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 0.4rem;
+  }
+  .plan-detail-value {
+    font-size: 1.1rem;
+    color: var(--cream);
+    font-family: 'Cormorant Garamond', serif;
+  }
+  .plan-rooms {
+    list-style: none;
+    margin-bottom: 2.5rem;
+  }
+  .plan-rooms li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(201,168,76,0.08);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+  .plan-rooms li span:last-child { color: var(--cream-dim); font-family: 'Cormorant Garamond', serif; font-size: 1rem; }
+
+  /* ── PRICING SECTION ── */
+  #pricing {
+    background: var(--brown-dark);
+    border-top: 1px solid rgba(201,168,76,0.1);
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+  }
+  .pricing-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .pricing-inner .section-title { margin-bottom: 0.8rem; }
+  .pricing-inner .section-body { margin: 0 auto 3.5rem; }
+
+  .pricing-table-wrap {
+    overflow-x: auto;
+    border: 1px solid rgba(201,168,76,0.18);
+    background: rgba(201,168,76,0.02);
+  }
+
+  .pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 720px;
+  }
+
+  .pricing-table thead tr {
+    background: rgba(201,168,76,0.12);
+  }
+
+  .pricing-table thead th {
+    padding: 1.2rem 1.4rem;
+    font-size: 0.62rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    font-family: 'Jost', sans-serif;
+    text-align: center;
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    border-right: 1px solid rgba(201,168,76,0.08);
+    white-space: nowrap;
+  }
+  .pricing-table thead th:last-child { border-right: none; }
+
+  .pricing-table tbody tr {
+    border-bottom: 1px solid rgba(201,168,76,0.08);
+    transition: background 0.25s;
+  }
+  .pricing-table tbody tr:last-child { border-bottom: none; }
+  .pricing-table tbody tr:hover { background: rgba(201,168,76,0.05); }
+
+  .pricing-table tbody td {
+    padding: 1.2rem 1.4rem;
+    text-align: center;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    border-right: 1px solid rgba(201,168,76,0.06);
+    font-family: 'Jost', sans-serif;
+  }
+  .pricing-table tbody td:last-child { border-right: none; }
+
+  .pricing-table tbody td.td-type {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    color: var(--cream);
+    font-weight: 400;
+    letter-spacing: 0.03em;
+  }
+  .pricing-table tbody td.td-wing {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+  }
+  .pricing-table tbody td.td-area {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    color: var(--cream-dim);
+  }
+  .pricing-table tbody td.td-agreement {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: var(--gold-light);
+    font-weight: 400;
+  }
+  .pricing-table tbody td.td-fixed {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    color: var(--gold);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  /* Divider row between 2BHK and 1BHK */
+  .pricing-table tbody tr.section-divider td {
+    padding: 0.4rem 1.4rem;
+    background: rgba(201,168,76,0.06);
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    text-align: left;
+    border-bottom: 1px solid rgba(201,168,76,0.12);
+  }
+
+  .pricing-note {
+    margin-top: 1.5rem;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    letter-spacing: 0.06em;
+    opacity: 0.7;
+    line-height: 1.8;
+  }
+
+  .pricing-cta-row {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+  }
+
+  /* ── LEGACY ── */
+  #legacy {
+    background: var(--brown-mid);
+    border-top: 1px solid rgba(201,168,76,0.1);
+  }
+  .legacy-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+  .legacy-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  .legacy-stat {
+    padding: 2rem;
+    border: 1px solid rgba(201,168,76,0.15);
+    background: rgba(201,168,76,0.03);
+  }
+  .legacy-stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .legacy-stat-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 0.6rem;
+  }
+  .legacy-timeline {
+    position: relative;
+    padding-left: 2rem;
+  }
+  .legacy-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2rem;
+    top: 0.4rem;
+    width: 7px; height: 7px;
+    background: var(--gold);
+    border-radius: 50%;
+  }
+  .timeline-year {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+  .timeline-name {
+    font-size: 0.9rem;
+    color: var(--cream-dim);
+    margin-top: 0.2rem;
+  }
+  .timeline-place {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+
+  #contact {
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  #contact::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 50% at 50% 50%, rgba(201,168,76,0.06) 0%, transparent 70%);
+  }
+  .contact-inner { position: relative; z-index: 2; max-width: 700px; margin: 0 auto; }
+  .contact-diamond {
+    width: 60px; height: 60px;
+    border: 1px solid rgba(201,168,76,0.4);
+    transform: rotate(45deg);
+    margin: 0 auto 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .contact-diamond::before {
+    content: '◆';
+    transform: rotate(-45deg);
+    color: var(--gold);
+    font-size: 1.2rem;
+  }
+  .contact-phone {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 6vw, 4rem);
+    color: var(--gold);
+    letter-spacing: 0.05em;
+    margin: 1.5rem 0;
+  }
+  .contact-address {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.9;
+    margin: 1.5rem 0 3rem;
+    letter-spacing: 0.05em;
+  }
+  .contact-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 3rem;
+    text-align: left;
+  }
+  .form-field { display: flex; flex-direction: column; gap: 0.5rem; }
+  .form-field.full { grid-column: 1 / -1; }
+  .form-field label {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+  }
+  .form-field input, .form-field select {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(201,168,76,0.2);
+    color: var(--cream);
+    padding: 0.85rem 1rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.85rem;
+    outline: none;
+    transition: border-color 0.3s;
+    appearance: none;
+  }
+  .form-field input:focus, .form-field select:focus { border-color: var(--gold); }
+  .form-field input::placeholder { color: var(--text-muted); }
+  .form-field select option { background: var(--brown-dark); }
+  .form-submit {
+    grid-column: 1 / -1;
+    background: var(--gold);
+    color: var(--brown-dark);
+    border: none;
+    padding: 1rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 0.5rem;
+  }
+  .form-submit:hover { background: var(--gold-light); }
+
+  footer {
+    border-top: 1px solid rgba(201,168,76,0.1);
+    padding: 2.5rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .footer-rera {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+  }
+  .footer-rera strong { color: var(--gold); }
+  .footer-disclaimer {
+    font-size: 0.62rem;
+    color: rgba(184,159,128,0.5);
+    max-width: 600px;
+    line-height: 1.6;
+    text-align: right;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0;
+    animation: fadeIn 1s 2s forwards;
+    z-index: 2;
+  }
+  .scroll-hint span {
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: scrollLine 2s ease-in-out infinite;
+  }
+  @keyframes scrollLine {
+    0% { transform: scaleY(0); transform-origin: top; }
+    50% { transform: scaleY(1); transform-origin: top; }
+    51% { transform: scaleY(1); transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+  }
+
+  @media (max-width: 900px) {
+    nav { padding: 1.2rem 1.5rem; }
+    .nav-links, .nav-cta { display: none; }
+    section { padding: 5rem 1.5rem; }
+    #about, .location-inner, .legacy-inner, .plan-content.active { grid-template-columns: 1fr; gap: 3rem; }
+    .amenities-grid { grid-template-columns: repeat(2, 1fr); }
+    footer { flex-direction: column; text-align: center; }
+    .footer-disclaimer { text-align: center; }
+    .contact-form { grid-template-columns: 1fr; }
+    .hero-stats { gap: 2rem; flex-wrap: wrap; }
+    .pricing-table tbody td, .pricing-table thead th { padding: 1rem 0.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="#" class="nav-logo">
+    Kohinoor
+    <span>by Riddhi Siddhi Tiara</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">Overview</a></li>
+    <li><a href="#amenities">Amenities</a></li>
+    <li><a href="#plans">Floor Plans</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#location">Location</a></li>
+    <li><a href="#legacy">Legacy</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Enquire Now</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="diamond-bg"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Riddhi Siddhi Tiara Presents</p>
+    <h1 class="hero-title">KO</em>HIN<em>O</em><br>OR</h1>
+    <p class="hero-subtitle">1 &amp; 2 BHK Amenity Rich Homes · Ambegaon Budruk, Pune</p>
+    <div class="hero-divider"></div>
+    <p class="hero-tagline">Discover a Precious Life Upgrade</p>
+    <div class="hero-ctas">
+      <a href="#plans" class="btn-primary">Explore Floor Plans</a>
+      <a href="#contact" class="btn-ghost">Schedule a Visit</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">20+</div>
+        <div class="hero-stat-label">Years of Excellence</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">20+</div>
+        <div class="hero-stat-label">Projects Delivered</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">3.69L</div>
+        <div class="hero-stat-label">Sq.ft. in Development</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">B Wing</div>
+        <div class="hero-stat-label">Now Available</div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section>
+<div id="about">
+  <div class="about-visual reveal">
+    <div class="about-img-frame">
+      <div class="about-img-inner">
+        <svg viewBox="0 0 200 280" width="160" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="20" y="60" width="70" height="220" fill="rgba(201,168,76,0.08)" stroke="rgba(201,168,76,0.3)" stroke-width="0.5"/>
+          <rect x="110" y="80" width="70" height="200" fill="rgba(201,168,76,0.06)" stroke="rgba(201,168,76,0.25)" stroke-width="0.5"/>
+          <g fill="rgba(201,168,76,0.25)">
+            <rect x="28" y="70" width="8" height="6"/><rect x="42" y="70" width="8" height="6"/><rect x="56" y="70" width="8" height="6"/><rect x="70" y="70" width="8" height="6"/>
+            <rect x="28" y="84" width="8" height="6"/><rect x="42" y="84" width="8" height="6"/><rect x="56" y="84" width="8" height="6"/><rect x="70" y="84" width="8" height="6"/>
+            <rect x="28" y="98" width="8" height="6"/><rect x="42" y="98" width="8" height="6"/><rect x="56" y="98" width="8" height="6"/><rect x="70" y="98" width="8" height="6"/>
+            <rect x="28" y="112" width="8" height="6"/><rect x="42" y="112" width="8" height="6"/><rect x="56" y="112" width="8" height="6"/><rect x="70" y="112" width="8" height="6"/>
+            <rect x="28" y="126" width="8" height="6"/><rect x="42" y="126" width="8" height="6"/><rect x="56" y="126" width="8" height="6"/><rect x="70" y="126" width="8" height="6"/>
+            <rect x="118" y="90" width="8" height="6"/><rect x="132" y="90" width="8" height="6"/><rect x="146" y="90" width="8" height="6"/><rect x="160" y="90" width="8" height="6"/>
+            <rect x="118" y="104" width="8" height="6"/><rect x="132" y="104" width="8" height="6"/><rect x="146" y="104" width="8" height="6"/><rect x="160" y="104" width="8" height="6"/>
+            <rect x="118" y="118" width="8" height="6"/><rect x="132" y="118" width="8" height="6"/><rect x="146" y="118" width="8" height="6"/><rect x="160" y="118" width="8" height="6"/>
+          </g>
+          <line x1="20" y1="60" x2="90" y2="60" stroke="rgba(201,168,76,0.5)" stroke-width="1"/>
+          <line x1="110" y1="80" x2="180" y2="80" stroke="rgba(201,168,76,0.5)" stroke-width="1"/>
+          <polygon points="55,20 70,35 55,50 40,35" stroke="rgba(201,168,76,0.8)" stroke-width="0.8" fill="rgba(201,168,76,0.1)"/>
+        </svg>
+        <div style="font-family:'Cormorant Garamond',serif; color:rgba(201,168,76,0.5); font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; margin-top:1rem;">Ambegaon Budruk · Pune</div>
+      </div>
+    </div>
+    <div class="about-accent"></div>
+    <div class="about-badge">
+      <div class="about-badge-num">2025</div>
+      <div class="about-badge-text">Possession</div>
+    </div>
+  </div>
+  <div class="reveal">
+    <p class="section-label">The Project</p>
+    <h2 class="section-title">Where Luxury Meets <em>Affordability</em></h2>
+    <p class="section-body">
+      Kohinoor by Riddhi Siddhi Tiara redefines residential living in Ambegaon Budruk — a location that balances serene traditional charm with seamless access to Pune's city life, major highways, and thriving commercial hubs.
+    </p>
+    <p class="section-body" style="margin-top:1rem;">
+      Thoughtfully designed 1 &amp; 2 BHK homes with a spectacular collection of rooftop and ground-level amenities, each crafted to enrich every stage of family life.
+    </p>
+    <div style="margin-top:2.5rem; display:flex; gap:2rem; flex-wrap:wrap;">
+      <div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; color:var(--gold);">G + 12</div>
+        <div style="font-size:0.65rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--text-muted); margin-top:0.3rem;">Floors</div>
+      </div>
+      <div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; color:var(--gold);">483–679</div>
+        <div style="font-size:0.65rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--text-muted); margin-top:0.3rem;">Sq.ft. Carpet Area</div>
+      </div>
+      <div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; color:var(--gold);">24+</div>
+        <div style="font-size:0.65rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--text-muted); margin-top:0.3rem;">Amenities</div>
+      </div>
+    </div>
+    <div style="margin-top:2.5rem;">
+      <a href="#contact" class="btn-primary">Book a Site Visit</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- AMENITIES -->
+<section id="amenities">
+  <p class="section-label reveal">Lifestyle</p>
+  <h2 class="section-title reveal">Multiple Amenities,<br><em>1 Complete Life</em></h2>
+  <p class="section-body reveal" style="margin:0 auto 4rem;">Rooftop and ground-level amenities thoughtfully designed to offer something extraordinary for every member of the family.</p>
+  <div class="amenities-grid reveal">
+    <div class="amenity-item"><div class="amenity-emoji">🏊</div><div class="amenity-name">Swimming Pool &amp; Kids Pool</div></div>
+    <div class="amenity-item"><div class="amenity-emoji">🏋️</div><div class="amenity-name">Rooftop GYM</div></div>
+    <div class="amenity-item"><div class="amenity-emoji">☕</div><div class="amenity-name">Rooftop Health Café</div></div>
+    <div class="amenity-item"><div class="amenity-emoji">🎬</div><div class="amenity-name">Open Air Screening</div></div>
+    <div class="amenity-item"><div class="amenity-emoji">🏏</div><div class="amenity-name">Box Cricket</div></div>
+    <div class="amenity-item"><div class="amenity-emoji">⛸️</div><div class="amenity-name">Skating Rink</div></div>
+    <div class="amenity-item"><div class="amenity-emoji">🔭</div><div class="amenity-name">Star Gazing Area</div></div>
+    <div class="amenity-item"><div class="amenity-emoji">🎉</div><div class="amenity-name">Party Lawn</div></div>
+    <div class="amenity-item"><div class="amenity-emoji">🏃</div><div class="amenity-name">Jogging Track</div></div>
+    <div class="amenity-item"><div class="amenity-emoji">🧘</div><div class="amenity-name">Acupressure Pathway</div></div>
+    <div class="amenity-item"><div class="amenity-emoji">🛖</div><div class="amenity-name">Clubhouse</div></div>
+    <div class="amenity-item"><div class="amenity-emoji">🧒</div><div class="amenity-name">Children's Play Area</div></div>
+    <div class="amenity-item"><div class="amenity-emoji">🎮</div><div class="amenity-name">Games Room</div></div>
+    <div class="amenity-item"><div class="amenity-emoji">💧</div><div class="amenity-name">Rain Water Harvesting</div></div>
+    <div class="amenity-item"><div class="amenity-emoji">🔐</div><div class="amenity-name">Secured Entrance Lobby</div></div>
+    <div class="amenity-item"><div class="amenity-emoji">🪑</div><div class="amenity-name">Senior Citizen Sitout</div></div>
+  </div>
+</section>
+
+<!-- FLOOR PLANS -->
+<section id="plans">
+  <div class="plans-inner">
+    <p class="section-label reveal">B Wing · Floor Plans</p>
+    <h2 class="section-title reveal">Intelligently <em>Designed</em> Homes</h2>
+
+    <div class="plans-tabs">
+      <button class="plans-tab active" onclick="switchPlan('2bhk', this)">2 BHK</button>
+      <button class="plans-tab" onclick="switchPlan('1bhk', this)">1 BHK</button>
+    </div>
+
+    <!-- 2 BHK -->
+    <div class="plan-content active" id="plan-2bhk">
+      <div class="plan-visual reveal">
+        <div class="plan-visual-inner">
+          <svg viewBox="0 0 320 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+            <rect x="5" y="5" width="310" height="270" fill="none" stroke="rgba(201,168,76,0.3)" stroke-width="0.5"/>
+            <rect x="10" y="10" width="140" height="110" fill="rgba(201,168,76,0.05)" stroke="rgba(201,168,76,0.3)" stroke-width="0.8"/>
+            <text x="80" y="55" text-anchor="middle" fill="rgba(201,168,76,0.6)" font-size="9" font-family="Jost">LIVING</text>
+            <text x="80" y="68" text-anchor="middle" fill="rgba(201,168,76,0.4)" font-size="7" font-family="Jost">13'10" × 11'0"</text>
+            <rect x="155" y="10" width="80" height="70" fill="rgba(201,168,76,0.04)" stroke="rgba(201,168,76,0.25)" stroke-width="0.8"/>
+            <text x="195" y="48" text-anchor="middle" fill="rgba(201,168,76,0.6)" font-size="9" font-family="Jost">KITCHEN</text>
+            <text x="195" y="60" text-anchor="middle" fill="rgba(201,168,76,0.4)" font-size="7" font-family="Jost">15'7" × 8'0"</text>
+            <rect x="240" y="10" width="65" height="70" fill="rgba(201,168,76,0.06)" stroke="rgba(201,168,76,0.35)" stroke-width="0.8"/>
+            <text x="272" y="45" text-anchor="middle" fill="rgba(201,168,76,0.6)" font-size="9" font-family="Jost">BALCONY</text>
+            <rect x="10" y="125" width="140" height="100" fill="rgba(201,168,76,0.06)" stroke="rgba(201,168,76,0.3)" stroke-width="0.8"/>
+            <text x="80" y="172" text-anchor="middle" fill="rgba(201,168,76,0.6)" font-size="9" font-family="Jost">MASTER BED</text>
+            <text x="80" y="185" text-anchor="middle" fill="rgba(201,168,76,0.4)" font-size="7" font-family="Jost">9'10" × 12'0"</text>
+            <rect x="155" y="85" width="110" height="90" fill="rgba(201,168,76,0.04)" stroke="rgba(201,168,76,0.25)" stroke-width="0.8"/>
+            <text x="210" y="127" text-anchor="middle" fill="rgba(201,168,76,0.6)" font-size="9" font-family="Jost">BEDROOM 2</text>
+            <text x="210" y="140" text-anchor="middle" fill="rgba(201,168,76,0.4)" font-size="7" font-family="Jost">9'10" × 9'10"</text>
+            <rect x="10" y="228" width="65" height="45" fill="rgba(201,168,76,0.03)" stroke="rgba(201,168,76,0.2)" stroke-width="0.8"/>
+            <text x="42" y="255" text-anchor="middle" fill="rgba(201,168,76,0.5)" font-size="8" font-family="Jost">TOILET</text>
+            <rect x="80" y="228" width="70" height="45" fill="rgba(201,168,76,0.03)" stroke="rgba(201,168,76,0.2)" stroke-width="0.8"/>
+            <text x="115" y="255" text-anchor="middle" fill="rgba(201,168,76,0.5)" font-size="8" font-family="Jost">TOILET</text>
+            <rect x="155" y="180" width="60" height="93" fill="rgba(201,168,76,0.03)" stroke="rgba(201,168,76,0.2)" stroke-width="0.8"/>
+            <text x="185" y="228" text-anchor="middle" fill="rgba(201,168,76,0.5)" font-size="8" font-family="Jost">LOBBY</text>
+            <rect x="220" y="180" width="85" height="45" fill="rgba(201,168,76,0.04)" stroke="rgba(201,168,76,0.25)" stroke-width="0.8"/>
+            <text x="262" y="205" text-anchor="middle" fill="rgba(201,168,76,0.5)" font-size="8" font-family="Jost">STD BALCONY</text>
+            <rect x="220" y="228" width="85" height="45" fill="rgba(201,168,76,0.03)" stroke="rgba(201,168,76,0.2)" stroke-width="0.8"/>
+            <text x="262" y="253" text-anchor="middle" fill="rgba(201,168,76,0.5)" font-size="8" font-family="Jost">DRY BAL.</text>
+            <text x="292" y="22" fill="rgba(201,168,76,0.5)" font-size="10" font-family="Cormorant Garamond">N↑</text>
+          </svg>
+        </div>
+      </div>
+      <div class="plan-specs reveal">
+        <div class="plan-type-title">2 BHK</div>
+        <div class="plan-type-sub">B Wing · Floors 1–12 (excl. 8th)</div>
+        <div class="plan-details">
+          <div class="plan-detail">
+            <div class="plan-detail-label">Carpet Area</div>
+            <div class="plan-detail-value">55.61 sq.m · 678.67 sq.ft</div>
+          </div>
+          <div class="plan-detail">
+            <div class="plan-detail-label">Open Balcony</div>
+            <div class="plan-detail-value">5.03 sq.m</div>
+          </div>
+          <div class="plan-detail">
+            <div class="plan-detail-label">Dry Balcony</div>
+            <div class="plan-detail-value">2.41 sq.m</div>
+          </div>
+          <div class="plan-detail">
+            <div class="plan-detail-label">Total Area</div>
+            <div class="plan-detail-value">63.05 sq.m</div>
+          </div>
+        </div>
+        <ul class="plan-rooms">
+          <li><span>Living / Dining</span><span>13'10" × 11'0"</span></li>
+          <li><span>Master Bedroom</span><span>9'10" × 12'0"</span></li>
+          <li><span>Bedroom 2</span><span>9'10" × 9'10"</span></li>
+          <li><span>Kitchen</span><span>15'7" × 8'0"</span></li>
+          <li><span>Balcony</span><span>4'11" × 11'0"</span></li>
+        </ul>
+        <a href="#contact" class="btn-primary">Enquire About 2 BHK</a>
+      </div>
+    </div>
+
+    <!-- 1 BHK -->
+    <div class="plan-content" id="plan-1bhk">
+      <div class="plan-visual reveal">
+        <div class="plan-visual-inner">
+          <svg viewBox="0 0 280 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+            <rect x="5" y="5" width="270" height="250" fill="none" stroke="rgba(201,168,76,0.3)" stroke-width="0.5"/>
+            <rect x="10" y="10" width="130" height="120" fill="rgba(201,168,76,0.06)" stroke="rgba(201,168,76,0.3)" stroke-width="0.8"/>
+            <text x="75" y="65" text-anchor="middle" fill="rgba(201,168,76,0.6)" font-size="9" font-family="Jost">MASTER BEDROOM</text>
+            <text x="75" y="78" text-anchor="middle" fill="rgba(201,168,76,0.4)" font-size="7" font-family="Jost">9'10" × 11'3"</text>
+            <rect x="145" y="10" width="120" height="80" fill="rgba(201,168,76,0.05)" stroke="rgba(201,168,76,0.3)" stroke-width="0.8"/>
+            <text x="205" y="50" text-anchor="middle" fill="rgba(201,168,76,0.6)" font-size="9" font-family="Jost">BALCONY</text>
+            <text x="205" y="63" text-anchor="middle" fill="rgba(201,168,76,0.4)" font-size="7" font-family="Jost">10'0" × 5'0"</text>
+            <rect x="10" y="135" width="155" height="100" fill="rgba(201,168,76,0.04)" stroke="rgba(201,168,76,0.25)" stroke-width="0.8"/>
+            <text x="87" y="180" text-anchor="middle" fill="rgba(201,168,76,0.6)" font-size="9" font-family="Jost">LIVING / DINING</text>
+            <text x="87" y="193" text-anchor="middle" fill="rgba(201,168,76,0.4)" font-size="7" font-family="Jost">10'0" × 13'0"</text>
+            <rect x="145" y="95" width="60" height="75" fill="rgba(201,168,76,0.03)" stroke="rgba(201,168,76,0.2)" stroke-width="0.8"/>
+            <text x="175" y="135" text-anchor="middle" fill="rgba(201,168,76,0.5)" font-size="8" font-family="Jost">TOILET</text>
+            <rect x="210" y="95" width="55" height="75" fill="rgba(201,168,76,0.04)" stroke="rgba(201,168,76,0.25)" stroke-width="0.8"/>
+            <text x="237" y="135" text-anchor="middle" fill="rgba(201,168,76,0.5)" font-size="8" font-family="Jost">KITCHEN</text>
+            <rect x="170" y="175" width="95" height="55" fill="rgba(201,168,76,0.03)" stroke="rgba(201,168,76,0.2)" stroke-width="0.8"/>
+            <text x="217" y="206" text-anchor="middle" fill="rgba(201,168,76,0.5)" font-size="8" font-family="Jost">LOBBY</text>
+            <rect x="10" y="238" width="155" height="17" fill="rgba(201,168,76,0.04)" stroke="rgba(201,168,76,0.2)" stroke-width="0.8"/>
+            <text x="87" y="250" text-anchor="middle" fill="rgba(201,168,76,0.4)" font-size="7" font-family="Jost">STANDING BALCONY</text>
+            <text x="260" y="22" fill="rgba(201,168,76,0.5)" font-size="10" font-family="Cormorant Garamond">N↑</text>
+          </svg>
+        </div>
+      </div>
+      <div class="plan-specs reveal">
+        <div class="plan-type-title">1 BHK</div>
+        <div class="plan-type-sub">B Wing · Floors 1–12 (excl. 8th)</div>
+        <div class="plan-details">
+          <div class="plan-detail">
+            <div class="plan-detail-label">Carpet Area</div>
+            <div class="plan-detail-value">40.06–40.24 sq.m</div>
+          </div>
+          <div class="plan-detail">
+            <div class="plan-detail-label">Open Balcony</div>
+            <div class="plan-detail-value">4.65–4.66 sq.m</div>
+          </div>
+          <div class="plan-detail">
+            <div class="plan-detail-label">Total Area</div>
+            <div class="plan-detail-value">44.72–44.89 sq.m</div>
+          </div>
+          <div class="plan-detail">
+            <div class="plan-detail-label">In Sq.ft.</div>
+            <div class="plan-detail-value">481–483 sq.ft</div>
+          </div>
+        </div>
+        <ul class="plan-rooms">
+          <li><span>Master Bedroom</span><span>9'10" × 11'3"</span></li>
+          <li><span>Living / Dining</span><span>10'0" × 13'0"</span></li>
+          <li><span>Kitchen</span><span>8'4" × 8'3"</span></li>
+          <li><span>Balcony</span><span>10'0" × 5'0"</span></li>
+          <li><span>Toilet</span><span>4'10" × 7'0"</span></li>
+        </ul>
+        <a href="#contact" class="btn-primary">Enquire About 1 BHK</a>
+      </div>
+    </div>
+
+    <p style="font-size:0.65rem; color:var(--text-muted); margin-top:2rem; letter-spacing:0.05em;">
+      MahaRera Reg. No – B Wing: P52100079574 · Plans are indicative and subject to change.
+    </p>
+  </div>
+</section>
+
+<!-- ── PRICING SECTION ── -->
+<section id="pricing">
+  <div class="pricing-inner">
+    <p class="section-label reveal">B Wing · Pricing</p>
+    <h2 class="section-title reveal">Transparent <em>Pricing</em></h2>
+    <p class="section-body reveal">All-inclusive pricing with no hidden charges. The fixed price includes agreement value, stamp duty, registration, and GST.</p>
+
+    <div class="pricing-table-wrap reveal">
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>Wing</th>
+            <th>Type</th>
+            <th>Carpet Area<br><span style="font-size:0.55rem;opacity:0.6;">sq.ft.</span></th>
+            <th>Agreement Value<br><span style="font-size:0.55rem;opacity:0.6;">₹</span></th>
+            <th>Stamp Duty 7%<br><span style="font-size:0.55rem;opacity:0.6;">₹</span></th>
+            <th>Registration<br><span style="font-size:0.55rem;opacity:0.6;">₹</span></th>
+            <th>GST 5%<br><span style="font-size:0.55rem;opacity:0.6;">₹</span></th>
+            <th>Fixed Price<br><span style="font-size:0.55rem;opacity:0.6;">₹</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 2 BHK rows -->
+          <tr class="section-divider">
+            <td colspan="8">2 BHK</td>
+          </tr>
+          <tr>
+            <td class="td-wing">B</td>
+            <td class="td-type">2 BHK</td>
+            <td class="td-area">621</td>
+            <td class="td-agreement">62,55,954</td>
+            <td>4,37,917</td>
+            <td>30,000</td>
+            <td>3,12,798</td>
+            <td class="td-fixed">₹ 70,36,668</td>
+          </tr>
+          <tr>
+            <td class="td-wing">B</td>
+            <td class="td-type">2 BHK</td>
+            <td class="td-area">679</td>
+            <td class="td-agreement">68,40,246</td>
+            <td>4,78,817</td>
+            <td>30,000</td>
+            <td>3,42,012</td>
+            <td class="td-fixed">₹ 76,91,076</td>
+          </tr>
+          <tr>
+            <td class="td-wing">B</td>
+            <td class="td-type">2 BHK</td>
+            <td class="td-area">686</td>
+            <td class="td-agreement">69,10,764</td>
+            <td>4,83,753</td>
+            <td>30,000</td>
+            <td>3,45,538</td>
+            <td class="td-fixed">₹ 77,70,056</td>
+          </tr>
+          <!-- 1 BHK rows -->
+          <tr class="section-divider">
+            <td colspan="8">1 BHK</td>
+          </tr>
+          <tr>
+            <td class="td-wing">B</td>
+            <td class="td-type">1 BHK</td>
+            <td class="td-area">481</td>
+            <td class="td-agreement">48,45,594</td>
+            <td>3,39,192</td>
+            <td>30,000</td>
+            <td>2,42,280</td>
+            <td class="td-fixed">₹ 54,57,065</td>
+          </tr>
+          <tr>
+            <td class="td-wing">B</td>
+            <td class="td-type">1 BHK</td>
+            <td class="td-area">483</td>
+            <td class="td-agreement">48,65,742</td>
+            <td>3,40,602</td>
+            <td>30,000</td>
+            <td>2,43,287</td>
+            <td class="td-fixed">₹ 54,79,631</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="pricing-note reveal">
+      All amounts in Indian Rupees (₹). Stamp Duty @ 7% · Registration fixed at ₹30,000 · GST @ 5% on Agreement Value.<br>
+      Prices are indicative and subject to change without prior notice. MahaRera Reg. No. B Wing: P52100079574.
+    </p>
+
+    <div class="pricing-cta-row reveal">
+      <a href="#contact" class="btn-primary">Get a Detailed Cost Sheet</a>
+      <a href="#contact" class="btn-ghost">Schedule a Visit</a>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section id="location">
+  <div class="location-inner">
+    <div>
+      <p class="section-label reveal">Connectivity</p>
+      <h2 class="section-title reveal">Prime Location,<br><em>Bustling Community</em></h2>
+      <p class="section-body reveal">Next to Sinhgad College Main Campus, Ambegaon Budruk offers seamless access to Pune's commercial hubs, educational institutions, hospitals, and highways.</p>
+      <div class="location-grid reveal">
+        <div class="loc-card">
+          <div class="loc-card-icon">🎓</div>
+          <div class="loc-card-title">Education</div>
+          <div class="loc-card-items">
+            <span>Sinhgad College <em>200m</em></span>
+            <span>Orchids School <em>2.3km</em></span>
+            <span>Indriyani Int'l <em>2.8km</em></span>
+          </div>
+        </div>
+        <div class="loc-card">
+          <div class="loc-card-icon">🏥</div>
+          <div class="loc-card-title">Healthcare</div>
+          <div class="loc-card-items">
+            <span>Pulse Hospital <em>3.9km</em></span>
+            <span>Navale Hospital <em>6.4km</em></span>
+            <span>Bharti Hospital <em>7.8km</em></span>
+          </div>
+        </div>
+        <div class="loc-card">
+          <div class="loc-card-icon">🛍️</div>
+          <div class="loc-card-title">Shopping</div>
+          <div class="loc-card-items">
+            <span>Fun Time Multiplex <em>2.5km</em></span>
+            <span>D Mart <em>2.5km</em></span>
+            <span>Brand Factory <em>3.6km</em></span>
+          </div>
+        </div>
+        <div class="loc-card">
+          <div class="loc-card-icon">🛣️</div>
+          <div class="loc-card-title">Connectivity</div>
+          <div class="loc-card-items">
+            <span>Sinhgad Road <em>4.2km</em></span>
+            <span>Navale Bridge <em>4.6km</em></span>
+            <span>Mumbai-Pune Highway <em>9.4km</em></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="map-placeholder reveal">
+      <div class="map-pin"></div>
+      <div class="map-address">Ambegaon Budruk, Pune 411 046</div>
+      <div style="font-size:0.7rem; color:var(--text-muted); margin-top:0.5rem;">Next to Sinhgad College Main Campus</div>
+    </div>
+  </div>
+</section>
+
+<!-- LEGACY -->
+<section id="legacy">
+  <div class="legacy-inner">
+    <div>
+      <p class="section-label reveal">Developer</p>
+      <h2 class="section-title reveal">A Legacy of Fulfilling<br><em>Dreams Since 2006</em></h2>
+      <p class="section-body reveal">Sneha Constructions (Riddhi Siddhi) combines experienced architects, engineers, and project managers to deliver exceptional results — on time, within budget, and to the highest standards.</p>
+      <div class="legacy-stats reveal">
+        <div class="legacy-stat">
+          <div class="legacy-stat-num">20+</div>
+          <div class="legacy-stat-label">Years of Experience</div>
+        </div>
+        <div class="legacy-stat">
+          <div class="legacy-stat-num">20+</div>
+          <div class="legacy-stat-label">Projects Delivered</div>
+        </div>
+        <div class="legacy-stat">
+          <div class="legacy-stat-num">3.69L</div>
+          <div class="legacy-stat-label">Sq.ft. in Development</div>
+        </div>
+        <div class="legacy-stat">
+          <div class="legacy-stat-num">2006</div>
+          <div class="legacy-stat-label">Year Founded</div>
+        </div>
+      </div>
+    </div>
+    <div class="legacy-timeline reveal">
+      <div class="timeline-item">
+        <div class="timeline-year">2006</div>
+        <div class="timeline-name">Riddhi Siddhi Complex</div>
+        <div class="timeline-place">Anand Nagar, Sinhgad Rd.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2015</div>
+        <div class="timeline-name">Riddhi Siddhi Tiara Amber</div>
+        <div class="timeline-place">Ambegaon Budruk</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2018</div>
+        <div class="timeline-name">Riddhi Siddhi Tiara Topaz</div>
+        <div class="timeline-place">Ambegaon Budruk</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2020</div>
+        <div class="timeline-name">Riddhi Siddhi Tiara Emerald &amp; Crystal</div>
+        <div class="timeline-place">Ambegaon Budruk</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2020</div>
+        <div class="timeline-name">Riddhi Siddhi Tiara Ruby</div>
+        <div class="timeline-place">Ambegaon Budruk</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2025</div>
+        <div class="timeline-name">Riddhi Siddhi Tiara Kohinoor</div>
+        <div class="timeline-place">Ambegaon Budruk · Current Project</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="contact-diamond reveal"></div>
+    <p class="section-label reveal">Get In Touch</p>
+    <h2 class="section-title reveal">Begin Your<br><em>Precious Life Upgrade</em></h2>
+    <div class="contact-phone reveal">895 632 2525</div>
+    <p class="contact-address reveal">
+      Site Address: Next to Sinhgad College Main Campus,<br>
+      Ambegaon BK, Pune 411 046<br><br>
+      <a href="http://www.riddhisiddhikohinoor.com" style="color:var(--gold); text-decoration:none;">www.riddhisiddhikohinoor.com</a>
+    </p>
+
+    <form class="contact-form reveal" onsubmit="handleSubmit(event)">
+      <div class="form-field">
+        <label>Full Name</label>
+        <input type="text" placeholder="Your name" required>
+      </div>
+      <div class="form-field">
+        <label>Phone Number</label>
+        <input type="tel" placeholder="+91 00000 00000" required>
+      </div>
+      <div class="form-field">
+        <label>Email Address</label>
+        <input type="email" placeholder="your@email.com">
+      </div>
+      <div class="form-field">
+        <label>Interested In</label>
+        <select>
+          <option value="">Select unit type</option>
+          <option>1 BHK</option>
+          <option>2 BHK</option>
+          <option>Site Visit</option>
+        </select>
+      </div>
+      <button type="submit" class="form-submit">Schedule a Consultation</button>
+    </form>
+    <div id="form-success" style="display:none; margin-top:1.5rem; color:var(--gold); font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-style:italic;">Thank you. We'll be in touch shortly.</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-rera">
+    <strong>MahaRera Reg. No.</strong><br>
+    A &amp; C Wing: P52100079612<br>
+    B Wing: <strong>P52100079574</strong><br>
+    <span style="margin-top:0.3rem;display:block;">https://maharera.mahaonline.gov.in</span>
+  </div>
+  <div class="footer-disclaimer">
+    Disclaimer: This brochure is purely conceptual and not a legal offering. The developer reserves all rights to amend the areas, layouts, plans, elevations, amenities and specifications at any point. All pictures are for representation purpose only. © 2025 Riddhi Siddhi Tiara. All rights reserved.
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 80);
+  });
+
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  function switchPlan(type, btn) {
+    document.querySelectorAll('.plan-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.plans-tab').forEach(el => el.classList.remove('active'));
+    document.getElementById('plan-' + type).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    e.target.style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+  }
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+</script>
+</body>
+</html>
