@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kohinoor – Riddhi Siddhi Tiara | Ambegaon Budruk, Pune</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
     --gold: #c9a84c;
@@ -16,20 +16,21 @@
     --cream: #f7f0e6;
     --cream-dim: #e8d9c4;
     --text-muted: #b89f80;
+    --error: #e05c5c;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
   }
-
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
-
   body {
     background: var(--brown-dark);
     color: var(--cream);
-    font-family: 'Jost', sans-serif;
-    font-weight: 300;
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 16px;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
   }
-
   body::before {
     content: '';
     position: fixed;
@@ -38,7 +39,6 @@
     pointer-events: none;
     z-index: 1000;
   }
-
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -55,33 +55,31 @@
     border-bottom: 1px solid rgba(201,168,76,0.15);
   }
   .nav-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.6rem;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
     font-weight: 600;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.04em;
     color: var(--gold);
-    text-transform: uppercase;
     text-decoration: none;
   }
   .nav-logo span {
+    font-family: var(--font-body);
     font-weight: 300;
-    font-style: italic;
+    font-style: normal;
     color: var(--cream-dim);
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
     display: block;
     text-transform: uppercase;
+    margin-top: 2px;
   }
-  .nav-links {
-    display: flex;
-    gap: 2.5rem;
-    list-style: none;
-  }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
   .nav-links a {
     color: var(--cream-dim);
     text-decoration: none;
-    font-size: 0.78rem;
-    letter-spacing: 0.15em;
+    font-size: 0.82rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     transition: color 0.3s;
   }
@@ -91,19 +89,16 @@
     border: 1px solid var(--gold);
     color: var(--gold);
     padding: 0.55rem 1.6rem;
-    font-family: 'Jost', sans-serif;
-    font-size: 0.75rem;
-    letter-spacing: 0.18em;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     cursor: pointer;
     transition: all 0.3s;
     text-decoration: none;
   }
-  .nav-cta:hover {
-    background: var(--gold);
-    color: var(--brown-dark);
-  }
-
+  .nav-cta:hover { background: var(--gold); color: var(--brown-dark); }
   #hero {
     min-height: 100vh;
     display: grid;
@@ -136,11 +131,12 @@
     border: 1px solid rgba(201,168,76,0.04);
   }
   @keyframes spin-slow { to { transform: translate(-50%,-50%) rotate(calc(45deg + 360deg)); } }
-
   .hero-content { position: relative; z-index: 2; max-width: 900px; }
   .hero-eyebrow {
-    font-size: 0.7rem;
-    letter-spacing: 0.3em;
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--gold);
     margin-bottom: 1.5rem;
@@ -148,40 +144,39 @@
     animation: fadeUp 0.9s 0.3s forwards;
   }
   .hero-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(5rem, 14vw, 11rem);
-    font-weight: 300;
-    line-height: 0.9;
-    letter-spacing: -0.01em;
+    font-family: var(--font-display);
+    font-size: clamp(4.5rem, 13vw, 10rem);
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: 0.02em;
     color: var(--cream);
     opacity: 0;
     animation: fadeUp 1s 0.5s forwards;
   }
-  .hero-title em {
-    color: var(--gold);
-    font-style: italic;
-  }
+  .hero-title em { color: var(--gold); font-style: italic; }
   .hero-subtitle {
     margin-top: 2rem;
-    font-size: 0.85rem;
-    letter-spacing: 0.2em;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--text-muted);
     opacity: 0;
     animation: fadeUp 0.9s 0.8s forwards;
   }
   .hero-divider {
-    width: 60px;
-    height: 1px;
+    width: 60px; height: 1px;
     background: var(--gold);
     margin: 2rem auto;
     opacity: 0;
     animation: fadeIn 1s 1s forwards;
   }
   .hero-tagline {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem;
+    font-family: var(--font-display);
+    font-size: 1.4rem;
     font-style: italic;
+    font-weight: 400;
     color: var(--cream-dim);
     opacity: 0;
     animation: fadeUp 0.9s 1.1s forwards;
@@ -199,10 +194,10 @@
     background: var(--gold);
     color: var(--brown-dark);
     padding: 0.9rem 2.4rem;
-    font-family: 'Jost', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.2em;
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     border: none;
     cursor: pointer;
@@ -215,9 +210,10 @@
     background: transparent;
     color: var(--cream);
     padding: 0.9rem 2.4rem;
-    font-family: 'Jost', sans-serif;
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     border: 1px solid rgba(247,240,230,0.3);
     cursor: pointer;
@@ -226,7 +222,6 @@
     display: inline-block;
   }
   .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
-
   .hero-stats {
     margin-top: 5rem;
     display: flex;
@@ -239,57 +234,59 @@
   }
   .hero-stat { text-align: center; }
   .hero-stat-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.5rem;
+    font-family: var(--font-display);
+    font-size: 2.4rem;
+    font-weight: 400;
     color: var(--gold);
     line-height: 1;
   }
   .hero-stat-label {
-    font-size: 0.65rem;
-    letter-spacing: 0.2em;
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--text-muted);
-    margin-top: 0.4rem;
+    margin-top: 0.5rem;
   }
-
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(30px); }
     to   { opacity: 1; transform: translateY(0); }
   }
-  @keyframes fadeIn {
-    from { opacity: 0; } to { opacity: 1; }
-  }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
   .reveal {
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 0.8s ease, transform 0.8s ease;
   }
   .reveal.visible { opacity: 1; transform: translateY(0); }
-
   section { padding: 7rem 4rem; }
   .section-label {
-    font-size: 0.65rem;
-    letter-spacing: 0.3em;
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--gold);
     margin-bottom: 1rem;
   }
   .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.4rem, 5vw, 4rem);
-    font-weight: 300;
-    line-height: 1.1;
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    font-weight: 400;
+    line-height: 1.15;
     color: var(--cream);
     margin-bottom: 1.5rem;
   }
   .section-title em { font-style: italic; color: var(--gold); }
   .section-body {
-    font-size: 0.92rem;
-    line-height: 1.9;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.8;
     color: var(--text-muted);
     max-width: 540px;
+    font-weight: 300;
   }
-
   #about {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -345,18 +342,19 @@
     text-align: center;
   }
   .about-badge-num {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-display);
     font-size: 2rem;
     font-weight: 600;
     line-height: 1;
   }
   .about-badge-text {
-    font-size: 0.65rem;
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 500;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     margin-top: 0.3rem;
   }
-
   #location {
     background: var(--brown-mid);
     border-top: 1px solid rgba(201,168,76,0.1);
@@ -388,16 +386,20 @@
   }
   .loc-card-icon { font-size: 1.3rem; margin-bottom: 0.7rem; }
   .loc-card-title {
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--gold);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem;
   }
   .loc-card-items {
-    font-size: 0.82rem;
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    font-weight: 300;
     color: var(--text-muted);
-    line-height: 1.8;
+    line-height: 1.9;
   }
   .loc-card-items span {
     display: flex;
@@ -406,6 +408,7 @@
   .loc-card-items span em {
     font-style: normal;
     color: var(--cream-dim);
+    font-weight: 500;
   }
   .map-placeholder {
     background: linear-gradient(135deg, var(--brown) 0%, var(--brown-dark) 100%);
@@ -437,12 +440,13 @@
     50% { box-shadow: 0 0 0 10px rgba(201,168,76,0.15), 0 0 0 20px rgba(201,168,76,0.04); }
   }
   .map-address {
-    font-size: 0.75rem;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 500;
     letter-spacing: 0.1em;
     color: var(--gold);
     text-transform: uppercase;
   }
-
   #amenities {
     max-width: 1200px;
     margin: 0 auto;
@@ -467,12 +471,12 @@
   .amenity-item:hover { background: rgba(201,168,76,0.05); }
   .amenity-emoji { font-size: 1.8rem; margin-bottom: 1rem; }
   .amenity-name {
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
     color: var(--cream-dim);
   }
-
   #plans {
     background: linear-gradient(180deg, var(--brown-mid) 0%, var(--brown-dark) 100%);
     border-top: 1px solid rgba(201,168,76,0.1);
@@ -489,9 +493,10 @@
     background: transparent;
     border: none;
     color: var(--text-muted);
-    font-family: 'Jost', sans-serif;
-    font-size: 0.75rem;
-    letter-spacing: 0.18em;
+    font-family: var(--font-body);
+    font-size: 0.84rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     cursor: pointer;
     border-bottom: 2px solid transparent;
@@ -501,7 +506,6 @@
   .plans-tab.active { color: var(--gold); border-bottom-color: var(--gold); }
   .plan-content { display: none; }
   .plan-content.active { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
-
   .plan-visual {
     background: rgba(255,255,255,0.02);
     border: 1px solid rgba(201,168,76,0.12);
@@ -513,17 +517,19 @@
     overflow: hidden;
   }
   .plan-visual-inner { width: 75%; height: 75%; position: relative; }
-
   .plan-specs { padding: 1rem 0; }
   .plan-type-title {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-display);
     font-size: 2.5rem;
+    font-weight: 400;
     color: var(--gold);
     margin-bottom: 0.3rem;
   }
   .plan-type-sub {
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.14em;
     color: var(--text-muted);
     text-transform: uppercase;
     margin-bottom: 2rem;
@@ -539,16 +545,19 @@
     border: 1px solid rgba(201,168,76,0.12);
   }
   .plan-detail-label {
-    font-size: 0.62rem;
-    letter-spacing: 0.18em;
+    font-family: var(--font-body);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--gold-dim);
     margin-bottom: 0.4rem;
   }
   .plan-detail-value {
-    font-size: 1.1rem;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 400;
     color: var(--cream);
-    font-family: 'Cormorant Garamond', serif;
   }
   .plan-rooms {
     list-style: none;
@@ -560,12 +569,17 @@
     align-items: center;
     padding: 0.75rem 0;
     border-bottom: 1px solid rgba(201,168,76,0.08);
-    font-size: 0.85rem;
+    font-family: var(--font-body);
+    font-size: 0.92rem;
+    font-weight: 400;
     color: var(--text-muted);
   }
-  .plan-rooms li span:last-child { color: var(--cream-dim); font-family: 'Cormorant Garamond', serif; font-size: 1rem; }
-
-  /* ── PRICING SECTION ── */
+  .plan-rooms li span:last-child {
+    color: var(--cream-dim);
+    font-family: var(--font-body);
+    font-size: 0.92rem;
+    font-weight: 500;
+  }
   #pricing {
     background: var(--brown-dark);
     border-top: 1px solid rgba(201,168,76,0.1);
@@ -578,108 +592,74 @@
   }
   .pricing-inner .section-title { margin-bottom: 0.8rem; }
   .pricing-inner .section-body { margin: 0 auto 3.5rem; }
-
   .pricing-table-wrap {
     overflow-x: auto;
     border: 1px solid rgba(201,168,76,0.18);
     background: rgba(201,168,76,0.02);
   }
-
   .pricing-table {
     width: 100%;
     border-collapse: collapse;
     min-width: 720px;
   }
-
-  .pricing-table thead tr {
-    background: rgba(201,168,76,0.12);
-  }
-
+  .pricing-table thead tr { background: rgba(201,168,76,0.12); }
   .pricing-table thead th {
     padding: 1.2rem 1.4rem;
-    font-size: 0.62rem;
-    letter-spacing: 0.22em;
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--gold);
-    font-weight: 500;
-    font-family: 'Jost', sans-serif;
     text-align: center;
     border-bottom: 1px solid rgba(201,168,76,0.2);
     border-right: 1px solid rgba(201,168,76,0.08);
     white-space: nowrap;
   }
   .pricing-table thead th:last-child { border-right: none; }
-
   .pricing-table tbody tr {
     border-bottom: 1px solid rgba(201,168,76,0.08);
     transition: background 0.25s;
   }
   .pricing-table tbody tr:last-child { border-bottom: none; }
   .pricing-table tbody tr:hover { background: rgba(201,168,76,0.05); }
-
   .pricing-table tbody td {
     padding: 1.2rem 1.4rem;
     text-align: center;
-    font-size: 0.88rem;
+    font-family: var(--font-body);
+    font-size: 0.94rem;
+    font-weight: 400;
     color: var(--text-muted);
     border-right: 1px solid rgba(201,168,76,0.06);
-    font-family: 'Jost', sans-serif;
   }
   .pricing-table tbody td:last-child { border-right: none; }
-
-  .pricing-table tbody td.td-type {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.15rem;
-    color: var(--cream);
-    font-weight: 400;
-    letter-spacing: 0.03em;
-  }
-  .pricing-table tbody td.td-wing {
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold-dim);
-  }
-  .pricing-table tbody td.td-area {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.05rem;
-    color: var(--cream-dim);
-  }
-  .pricing-table tbody td.td-agreement {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    color: var(--gold-light);
-    font-weight: 400;
-  }
-  .pricing-table tbody td.td-fixed {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
-    color: var(--gold);
-    font-weight: 600;
-    letter-spacing: 0.02em;
-  }
-
-  /* Divider row between 2BHK and 1BHK */
+  .pricing-table tbody td.td-type { font-family: var(--font-body); font-size: 1rem; font-weight: 500; color: var(--cream); }
+  .pricing-table tbody td.td-wing { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-dim); }
+  .pricing-table tbody td.td-area { font-family: var(--font-body); font-size: 1rem; font-weight: 400; color: var(--cream-dim); }
+  .pricing-table tbody td.td-agreement { font-family: var(--font-body); font-size: 1rem; font-weight: 400; color: var(--gold-light); }
+  .pricing-table tbody td.td-fixed { font-family: var(--font-body); font-size: 1.05rem; font-weight: 600; color: var(--gold); letter-spacing: 0.02em; }
   .pricing-table tbody tr.section-divider td {
-    padding: 0.4rem 1.4rem;
+    padding: 0.45rem 1.4rem;
     background: rgba(201,168,76,0.06);
-    font-size: 0.6rem;
-    letter-spacing: 0.25em;
+    font-family: var(--font-body);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--gold-dim);
     text-align: left;
     border-bottom: 1px solid rgba(201,168,76,0.12);
   }
-
   .pricing-note {
     margin-top: 1.5rem;
-    font-size: 0.7rem;
+    font-family: var(--font-body);
+    font-size: 0.76rem;
+    font-weight: 300;
     color: var(--text-muted);
-    letter-spacing: 0.06em;
-    opacity: 0.7;
+    letter-spacing: 0.04em;
+    opacity: 0.8;
     line-height: 1.8;
   }
-
   .pricing-cta-row {
     margin-top: 3rem;
     display: flex;
@@ -687,8 +667,6 @@
     gap: 1.2rem;
     flex-wrap: wrap;
   }
-
-  /* ── LEGACY ── */
   #legacy {
     background: var(--brown-mid);
     border-top: 1px solid rgba(201,168,76,0.1);
@@ -713,14 +691,17 @@
     background: rgba(201,168,76,0.03);
   }
   .legacy-stat-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 3rem;
+    font-family: var(--font-display);
+    font-size: 2.8rem;
+    font-weight: 400;
     color: var(--gold);
     line-height: 1;
   }
   .legacy-stat-label {
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
+    font-family: var(--font-body);
+    font-size: 0.76rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--text-muted);
     margin-top: 0.6rem;
@@ -751,21 +732,28 @@
     border-radius: 50%;
   }
   .timeline-year {
-    font-size: 0.65rem;
-    letter-spacing: 0.2em;
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
     color: var(--gold);
     text-transform: uppercase;
   }
   .timeline-name {
-    font-size: 0.9rem;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 500;
     color: var(--cream-dim);
     margin-top: 0.2rem;
   }
   .timeline-place {
-    font-size: 0.75rem;
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    font-weight: 300;
     color: var(--text-muted);
   }
 
+  /* ── CONTACT (UPDATED) ── */
   #contact {
     text-align: center;
     position: relative;
@@ -794,18 +782,20 @@
     font-size: 1.2rem;
   }
   .contact-phone {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 6vw, 4rem);
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 6vw, 3.8rem);
+    font-weight: 400;
     color: var(--gold);
     letter-spacing: 0.05em;
     margin: 1.5rem 0;
   }
   .contact-address {
-    font-size: 0.82rem;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 300;
     color: var(--text-muted);
-    line-height: 1.9;
+    line-height: 2;
     margin: 1.5rem 0 3rem;
-    letter-spacing: 0.05em;
   }
   .contact-form {
     display: grid;
@@ -817,8 +807,10 @@
   .form-field { display: flex; flex-direction: column; gap: 0.5rem; }
   .form-field.full { grid-column: 1 / -1; }
   .form-field label {
-    font-size: 0.65rem;
-    letter-spacing: 0.2em;
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--gold-dim);
   }
@@ -826,9 +818,10 @@
     background: rgba(255,255,255,0.03);
     border: 1px solid rgba(201,168,76,0.2);
     color: var(--cream);
-    padding: 0.85rem 1rem;
-    font-family: 'Jost', sans-serif;
-    font-size: 0.85rem;
+    padding: 0.9rem 1rem;
+    font-family: var(--font-body);
+    font-size: 0.92rem;
+    font-weight: 300;
     outline: none;
     transition: border-color 0.3s;
     appearance: none;
@@ -836,22 +829,49 @@
   .form-field input:focus, .form-field select:focus { border-color: var(--gold); }
   .form-field input::placeholder { color: var(--text-muted); }
   .form-field select option { background: var(--brown-dark); }
+
+  /* Error state */
+  .form-field input.error,
+  .form-field select.error {
+    border-color: var(--error) !important;
+    background: rgba(224,92,92,0.06);
+  }
+  .field-error {
+    font-family: var(--font-body);
+    font-size: 0.68rem;
+    font-weight: 400;
+    color: var(--error);
+    letter-spacing: 0.06em;
+    margin-top: 0.2rem;
+    display: none;
+  }
+  .field-error.show { display: block; }
+
   .form-submit {
     grid-column: 1 / -1;
     background: var(--gold);
     color: var(--brown-dark);
     border: none;
     padding: 1rem;
-    font-family: 'Jost', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.25em;
+    font-family: var(--font-body);
+    font-size: 0.84rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     cursor: pointer;
     transition: all 0.3s;
     margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
   }
   .form-submit:hover { background: var(--gold-light); }
+  .form-submit:active { transform: scale(0.99); }
+  .whatsapp-icon {
+    width: 18px; height: 18px;
+    flex-shrink: 0;
+  }
 
   footer {
     border-top: 1px solid rgba(201,168,76,0.1);
@@ -863,19 +883,22 @@
     gap: 1rem;
   }
   .footer-rera {
-    font-size: 0.7rem;
+    font-family: var(--font-body);
+    font-size: 0.76rem;
+    font-weight: 400;
     color: var(--text-muted);
-    letter-spacing: 0.05em;
+    line-height: 1.8;
   }
   .footer-rera strong { color: var(--gold); }
   .footer-disclaimer {
-    font-size: 0.62rem;
+    font-family: var(--font-body);
+    font-size: 0.68rem;
+    font-weight: 300;
     color: rgba(184,159,128,0.5);
     max-width: 600px;
-    line-height: 1.6;
+    line-height: 1.7;
     text-align: right;
   }
-
   .scroll-hint {
     position: absolute;
     bottom: 2.5rem;
@@ -890,14 +913,15 @@
     z-index: 2;
   }
   .scroll-hint span {
-    font-size: 0.6rem;
-    letter-spacing: 0.25em;
+    font-family: var(--font-body);
+    font-size: 0.66rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--text-muted);
   }
   .scroll-line {
-    width: 1px;
-    height: 40px;
+    width: 1px; height: 40px;
     background: linear-gradient(to bottom, var(--gold), transparent);
     animation: scrollLine 2s ease-in-out infinite;
   }
@@ -907,7 +931,6 @@
     51% { transform: scaleY(1); transform-origin: bottom; }
     100% { transform: scaleY(0); transform-origin: bottom; }
   }
-
   @media (max-width: 900px) {
     nav { padding: 1.2rem 1.5rem; }
     .nav-links, .nav-cta { display: none; }
@@ -947,7 +970,7 @@
   <div class="diamond-bg"></div>
   <div class="hero-content">
     <p class="hero-eyebrow">Riddhi Siddhi Tiara Presents</p>
-    <h1 class="hero-title">KO</em>HIN<em>O</em><br>OR</h1>
+    <h1 class="hero-title">KOHINOOR</h1>
     <p class="hero-subtitle">1 &amp; 2 BHK Amenity Rich Homes · Ambegaon Budruk, Pune</p>
     <div class="hero-divider"></div>
     <p class="hero-tagline">Discover a Precious Life Upgrade</p>
@@ -993,17 +1016,14 @@
             <rect x="28" y="70" width="8" height="6"/><rect x="42" y="70" width="8" height="6"/><rect x="56" y="70" width="8" height="6"/><rect x="70" y="70" width="8" height="6"/>
             <rect x="28" y="84" width="8" height="6"/><rect x="42" y="84" width="8" height="6"/><rect x="56" y="84" width="8" height="6"/><rect x="70" y="84" width="8" height="6"/>
             <rect x="28" y="98" width="8" height="6"/><rect x="42" y="98" width="8" height="6"/><rect x="56" y="98" width="8" height="6"/><rect x="70" y="98" width="8" height="6"/>
-            <rect x="28" y="112" width="8" height="6"/><rect x="42" y="112" width="8" height="6"/><rect x="56" y="112" width="8" height="6"/><rect x="70" y="112" width="8" height="6"/>
-            <rect x="28" y="126" width="8" height="6"/><rect x="42" y="126" width="8" height="6"/><rect x="56" y="126" width="8" height="6"/><rect x="70" y="126" width="8" height="6"/>
-            <rect x="118" y="90" width="8" height="6"/><rect x="132" y="90" width="8" height="6"/><rect x="146" y="90" width="8" height="6"/><rect x="160" y="90" width="8" height="6"/>
-            <rect x="118" y="104" width="8" height="6"/><rect x="132" y="104" width="8" height="6"/><rect x="146" y="104" width="8" height="6"/><rect x="160" y="104" width="8" height="6"/>
-            <rect x="118" y="118" width="8" height="6"/><rect x="132" y="118" width="8" height="6"/><rect x="146" y="118" width="8" height="6"/><rect x="160" y="118" width="8" height="6"/>
+            <rect x="118" y="90" width="8" height="6"/><rect x="132" y="90" width="8" height="6"/><rect x="146" y="90" width="8" height="6"/>
+            <rect x="118" y="104" width="8" height="6"/><rect x="132" y="104" width="8" height="6"/><rect x="146" y="104" width="8" height="6"/>
           </g>
           <line x1="20" y1="60" x2="90" y2="60" stroke="rgba(201,168,76,0.5)" stroke-width="1"/>
           <line x1="110" y1="80" x2="180" y2="80" stroke="rgba(201,168,76,0.5)" stroke-width="1"/>
           <polygon points="55,20 70,35 55,50 40,35" stroke="rgba(201,168,76,0.8)" stroke-width="0.8" fill="rgba(201,168,76,0.1)"/>
         </svg>
-        <div style="font-family:'Cormorant Garamond',serif; color:rgba(201,168,76,0.5); font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; margin-top:1rem;">Ambegaon Budruk · Pune</div>
+        <div style="font-family:'DM Sans',sans-serif; font-size:0.72rem; font-weight:500; color:rgba(201,168,76,0.5); letter-spacing:0.16em; text-transform:uppercase; margin-top:1rem;">Ambegaon Budruk · Pune</div>
       </div>
     </div>
     <div class="about-accent"></div>
@@ -1021,18 +1041,18 @@
     <p class="section-body" style="margin-top:1rem;">
       Thoughtfully designed 1 &amp; 2 BHK homes with a spectacular collection of rooftop and ground-level amenities, each crafted to enrich every stage of family life.
     </p>
-    <div style="margin-top:2.5rem; display:flex; gap:2rem; flex-wrap:wrap;">
+    <div style="margin-top:2.5rem; display:flex; gap:2.5rem; flex-wrap:wrap;">
       <div>
-        <div style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; color:var(--gold);">G + 12</div>
-        <div style="font-size:0.65rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--text-muted); margin-top:0.3rem;">Floors</div>
+        <div style="font-family:'Playfair Display',serif; font-size:1.8rem; font-weight:400; color:var(--gold);">G + 12</div>
+        <div style="font-family:'DM Sans',sans-serif; font-size:0.72rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted); margin-top:0.3rem;">Floors</div>
       </div>
       <div>
-        <div style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; color:var(--gold);">483–679</div>
-        <div style="font-size:0.65rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--text-muted); margin-top:0.3rem;">Sq.ft. Carpet Area</div>
+        <div style="font-family:'Playfair Display',serif; font-size:1.8rem; font-weight:400; color:var(--gold);">483–679</div>
+        <div style="font-family:'DM Sans',sans-serif; font-size:0.72rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted); margin-top:0.3rem;">Sq.ft. Carpet Area</div>
       </div>
       <div>
-        <div style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; color:var(--gold);">24+</div>
-        <div style="font-size:0.65rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--text-muted); margin-top:0.3rem;">Amenities</div>
+        <div style="font-family:'Playfair Display',serif; font-size:1.8rem; font-weight:400; color:var(--gold);">24+</div>
+        <div style="font-family:'DM Sans',sans-serif; font-size:0.72rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted); margin-top:0.3rem;">Amenities</div>
       </div>
     </div>
     <div style="margin-top:2.5rem;">
@@ -1072,43 +1092,40 @@
   <div class="plans-inner">
     <p class="section-label reveal">B Wing · Floor Plans</p>
     <h2 class="section-title reveal">Intelligently <em>Designed</em> Homes</h2>
-
     <div class="plans-tabs">
       <button class="plans-tab active" onclick="switchPlan('2bhk', this)">2 BHK</button>
       <button class="plans-tab" onclick="switchPlan('1bhk', this)">1 BHK</button>
     </div>
-
-    <!-- 2 BHK -->
     <div class="plan-content active" id="plan-2bhk">
       <div class="plan-visual reveal">
         <div class="plan-visual-inner">
           <svg viewBox="0 0 320 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
             <rect x="5" y="5" width="310" height="270" fill="none" stroke="rgba(201,168,76,0.3)" stroke-width="0.5"/>
             <rect x="10" y="10" width="140" height="110" fill="rgba(201,168,76,0.05)" stroke="rgba(201,168,76,0.3)" stroke-width="0.8"/>
-            <text x="80" y="55" text-anchor="middle" fill="rgba(201,168,76,0.6)" font-size="9" font-family="Jost">LIVING</text>
-            <text x="80" y="68" text-anchor="middle" fill="rgba(201,168,76,0.4)" font-size="7" font-family="Jost">13'10" × 11'0"</text>
+            <text x="80" y="55" text-anchor="middle" fill="rgba(201,168,76,0.6)" font-size="9" font-family="DM Sans">LIVING</text>
+            <text x="80" y="68" text-anchor="middle" fill="rgba(201,168,76,0.4)" font-size="7" font-family="DM Sans">13'10" × 11'0"</text>
             <rect x="155" y="10" width="80" height="70" fill="rgba(201,168,76,0.04)" stroke="rgba(201,168,76,0.25)" stroke-width="0.8"/>
-            <text x="195" y="48" text-anchor="middle" fill="rgba(201,168,76,0.6)" font-size="9" font-family="Jost">KITCHEN</text>
-            <text x="195" y="60" text-anchor="middle" fill="rgba(201,168,76,0.4)" font-size="7" font-family="Jost">15'7" × 8'0"</text>
+            <text x="195" y="48" text-anchor="middle" fill="rgba(201,168,76,0.6)" font-size="9" font-family="DM Sans">KITCHEN</text>
+            <text x="195" y="60" text-anchor="middle" fill="rgba(201,168,76,0.4)" font-size="7" font-family="DM Sans">15'7" × 8'0"</text>
             <rect x="240" y="10" width="65" height="70" fill="rgba(201,168,76,0.06)" stroke="rgba(201,168,76,0.35)" stroke-width="0.8"/>
-            <text x="272" y="45" text-anchor="middle" fill="rgba(201,168,76,0.6)" font-size="9" font-family="Jost">BALCONY</text>
+            <text x="272" y="45" text-anchor="middle" fill="rgba(201,168,76,0.6)" font-size="9" font-family="DM Sans">BALCONY</text>
             <rect x="10" y="125" width="140" height="100" fill="rgba(201,168,76,0.06)" stroke="rgba(201,168,76,0.3)" stroke-width="0.8"/>
-            <text x="80" y="172" text-anchor="middle" fill="rgba(201,168,76,0.6)" font-size="9" font-family="Jost">MASTER BED</text>
-            <text x="80" y="185" text-anchor="middle" fill="rgba(201,168,76,0.4)" font-size="7" font-family="Jost">9'10" × 12'0"</text>
+            <text x="80" y="172" text-anchor="middle" fill="rgba(201,168,76,0.6)" font-size="9" font-family="DM Sans">MASTER BED</text>
+            <text x="80" y="185" text-anchor="middle" fill="rgba(201,168,76,0.4)" font-size="7" font-family="DM Sans">9'10" × 12'0"</text>
             <rect x="155" y="85" width="110" height="90" fill="rgba(201,168,76,0.04)" stroke="rgba(201,168,76,0.25)" stroke-width="0.8"/>
-            <text x="210" y="127" text-anchor="middle" fill="rgba(201,168,76,0.6)" font-size="9" font-family="Jost">BEDROOM 2</text>
-            <text x="210" y="140" text-anchor="middle" fill="rgba(201,168,76,0.4)" font-size="7" font-family="Jost">9'10" × 9'10"</text>
+            <text x="210" y="127" text-anchor="middle" fill="rgba(201,168,76,0.6)" font-size="9" font-family="DM Sans">BEDROOM 2</text>
+            <text x="210" y="140" text-anchor="middle" fill="rgba(201,168,76,0.4)" font-size="7" font-family="DM Sans">9'10" × 9'10"</text>
             <rect x="10" y="228" width="65" height="45" fill="rgba(201,168,76,0.03)" stroke="rgba(201,168,76,0.2)" stroke-width="0.8"/>
-            <text x="42" y="255" text-anchor="middle" fill="rgba(201,168,76,0.5)" font-size="8" font-family="Jost">TOILET</text>
+            <text x="42" y="255" text-anchor="middle" fill="rgba(201,168,76,0.5)" font-size="8" font-family="DM Sans">TOILET</text>
             <rect x="80" y="228" width="70" height="45" fill="rgba(201,168,76,0.03)" stroke="rgba(201,168,76,0.2)" stroke-width="0.8"/>
-            <text x="115" y="255" text-anchor="middle" fill="rgba(201,168,76,0.5)" font-size="8" font-family="Jost">TOILET</text>
+            <text x="115" y="255" text-anchor="middle" fill="rgba(201,168,76,0.5)" font-size="8" font-family="DM Sans">TOILET</text>
             <rect x="155" y="180" width="60" height="93" fill="rgba(201,168,76,0.03)" stroke="rgba(201,168,76,0.2)" stroke-width="0.8"/>
-            <text x="185" y="228" text-anchor="middle" fill="rgba(201,168,76,0.5)" font-size="8" font-family="Jost">LOBBY</text>
+            <text x="185" y="228" text-anchor="middle" fill="rgba(201,168,76,0.5)" font-size="8" font-family="DM Sans">LOBBY</text>
             <rect x="220" y="180" width="85" height="45" fill="rgba(201,168,76,0.04)" stroke="rgba(201,168,76,0.25)" stroke-width="0.8"/>
-            <text x="262" y="205" text-anchor="middle" fill="rgba(201,168,76,0.5)" font-size="8" font-family="Jost">STD BALCONY</text>
+            <text x="262" y="205" text-anchor="middle" fill="rgba(201,168,76,0.5)" font-size="8" font-family="DM Sans">STD BALCONY</text>
             <rect x="220" y="228" width="85" height="45" fill="rgba(201,168,76,0.03)" stroke="rgba(201,168,76,0.2)" stroke-width="0.8"/>
-            <text x="262" y="253" text-anchor="middle" fill="rgba(201,168,76,0.5)" font-size="8" font-family="Jost">DRY BAL.</text>
-            <text x="292" y="22" fill="rgba(201,168,76,0.5)" font-size="10" font-family="Cormorant Garamond">N↑</text>
+            <text x="262" y="253" text-anchor="middle" fill="rgba(201,168,76,0.5)" font-size="8" font-family="DM Sans">DRY BAL.</text>
+            <text x="292" y="22" fill="rgba(201,168,76,0.5)" font-size="10" font-family="DM Sans">N↑</text>
           </svg>
         </div>
       </div>
@@ -1116,22 +1133,10 @@
         <div class="plan-type-title">2 BHK</div>
         <div class="plan-type-sub">B Wing · Floors 1–12 (excl. 8th)</div>
         <div class="plan-details">
-          <div class="plan-detail">
-            <div class="plan-detail-label">Carpet Area</div>
-            <div class="plan-detail-value">55.61 sq.m · 678.67 sq.ft</div>
-          </div>
-          <div class="plan-detail">
-            <div class="plan-detail-label">Open Balcony</div>
-            <div class="plan-detail-value">5.03 sq.m</div>
-          </div>
-          <div class="plan-detail">
-            <div class="plan-detail-label">Dry Balcony</div>
-            <div class="plan-detail-value">2.41 sq.m</div>
-          </div>
-          <div class="plan-detail">
-            <div class="plan-detail-label">Total Area</div>
-            <div class="plan-detail-value">63.05 sq.m</div>
-          </div>
+          <div class="plan-detail"><div class="plan-detail-label">Carpet Area</div><div class="plan-detail-value">55.61 sq.m · 678.67 sq.ft</div></div>
+          <div class="plan-detail"><div class="plan-detail-label">Open Balcony</div><div class="plan-detail-value">5.03 sq.m</div></div>
+          <div class="plan-detail"><div class="plan-detail-label">Dry Balcony</div><div class="plan-detail-value">2.41 sq.m</div></div>
+          <div class="plan-detail"><div class="plan-detail-label">Total Area</div><div class="plan-detail-value">63.05 sq.m</div></div>
         </div>
         <ul class="plan-rooms">
           <li><span>Living / Dining</span><span>13'10" × 11'0"</span></li>
@@ -1143,31 +1148,29 @@
         <a href="#contact" class="btn-primary">Enquire About 2 BHK</a>
       </div>
     </div>
-
-    <!-- 1 BHK -->
     <div class="plan-content" id="plan-1bhk">
       <div class="plan-visual reveal">
         <div class="plan-visual-inner">
           <svg viewBox="0 0 280 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
             <rect x="5" y="5" width="270" height="250" fill="none" stroke="rgba(201,168,76,0.3)" stroke-width="0.5"/>
             <rect x="10" y="10" width="130" height="120" fill="rgba(201,168,76,0.06)" stroke="rgba(201,168,76,0.3)" stroke-width="0.8"/>
-            <text x="75" y="65" text-anchor="middle" fill="rgba(201,168,76,0.6)" font-size="9" font-family="Jost">MASTER BEDROOM</text>
-            <text x="75" y="78" text-anchor="middle" fill="rgba(201,168,76,0.4)" font-size="7" font-family="Jost">9'10" × 11'3"</text>
+            <text x="75" y="65" text-anchor="middle" fill="rgba(201,168,76,0.6)" font-size="9" font-family="DM Sans">MASTER BEDROOM</text>
+            <text x="75" y="78" text-anchor="middle" fill="rgba(201,168,76,0.4)" font-size="7" font-family="DM Sans">9'10" × 11'3"</text>
             <rect x="145" y="10" width="120" height="80" fill="rgba(201,168,76,0.05)" stroke="rgba(201,168,76,0.3)" stroke-width="0.8"/>
-            <text x="205" y="50" text-anchor="middle" fill="rgba(201,168,76,0.6)" font-size="9" font-family="Jost">BALCONY</text>
-            <text x="205" y="63" text-anchor="middle" fill="rgba(201,168,76,0.4)" font-size="7" font-family="Jost">10'0" × 5'0"</text>
+            <text x="205" y="50" text-anchor="middle" fill="rgba(201,168,76,0.6)" font-size="9" font-family="DM Sans">BALCONY</text>
+            <text x="205" y="63" text-anchor="middle" fill="rgba(201,168,76,0.4)" font-size="7" font-family="DM Sans">10'0" × 5'0"</text>
             <rect x="10" y="135" width="155" height="100" fill="rgba(201,168,76,0.04)" stroke="rgba(201,168,76,0.25)" stroke-width="0.8"/>
-            <text x="87" y="180" text-anchor="middle" fill="rgba(201,168,76,0.6)" font-size="9" font-family="Jost">LIVING / DINING</text>
-            <text x="87" y="193" text-anchor="middle" fill="rgba(201,168,76,0.4)" font-size="7" font-family="Jost">10'0" × 13'0"</text>
+            <text x="87" y="180" text-anchor="middle" fill="rgba(201,168,76,0.6)" font-size="9" font-family="DM Sans">LIVING / DINING</text>
+            <text x="87" y="193" text-anchor="middle" fill="rgba(201,168,76,0.4)" font-size="7" font-family="DM Sans">10'0" × 13'0"</text>
             <rect x="145" y="95" width="60" height="75" fill="rgba(201,168,76,0.03)" stroke="rgba(201,168,76,0.2)" stroke-width="0.8"/>
-            <text x="175" y="135" text-anchor="middle" fill="rgba(201,168,76,0.5)" font-size="8" font-family="Jost">TOILET</text>
+            <text x="175" y="135" text-anchor="middle" fill="rgba(201,168,76,0.5)" font-size="8" font-family="DM Sans">TOILET</text>
             <rect x="210" y="95" width="55" height="75" fill="rgba(201,168,76,0.04)" stroke="rgba(201,168,76,0.25)" stroke-width="0.8"/>
-            <text x="237" y="135" text-anchor="middle" fill="rgba(201,168,76,0.5)" font-size="8" font-family="Jost">KITCHEN</text>
+            <text x="237" y="135" text-anchor="middle" fill="rgba(201,168,76,0.5)" font-size="8" font-family="DM Sans">KITCHEN</text>
             <rect x="170" y="175" width="95" height="55" fill="rgba(201,168,76,0.03)" stroke="rgba(201,168,76,0.2)" stroke-width="0.8"/>
-            <text x="217" y="206" text-anchor="middle" fill="rgba(201,168,76,0.5)" font-size="8" font-family="Jost">LOBBY</text>
+            <text x="217" y="206" text-anchor="middle" fill="rgba(201,168,76,0.5)" font-size="8" font-family="DM Sans">LOBBY</text>
             <rect x="10" y="238" width="155" height="17" fill="rgba(201,168,76,0.04)" stroke="rgba(201,168,76,0.2)" stroke-width="0.8"/>
-            <text x="87" y="250" text-anchor="middle" fill="rgba(201,168,76,0.4)" font-size="7" font-family="Jost">STANDING BALCONY</text>
-            <text x="260" y="22" fill="rgba(201,168,76,0.5)" font-size="10" font-family="Cormorant Garamond">N↑</text>
+            <text x="87" y="250" text-anchor="middle" fill="rgba(201,168,76,0.4)" font-size="7" font-family="DM Sans">STANDING BALCONY</text>
+            <text x="260" y="22" fill="rgba(201,168,76,0.5)" font-size="10" font-family="DM Sans">N↑</text>
           </svg>
         </div>
       </div>
@@ -1175,22 +1178,10 @@
         <div class="plan-type-title">1 BHK</div>
         <div class="plan-type-sub">B Wing · Floors 1–12 (excl. 8th)</div>
         <div class="plan-details">
-          <div class="plan-detail">
-            <div class="plan-detail-label">Carpet Area</div>
-            <div class="plan-detail-value">40.06–40.24 sq.m</div>
-          </div>
-          <div class="plan-detail">
-            <div class="plan-detail-label">Open Balcony</div>
-            <div class="plan-detail-value">4.65–4.66 sq.m</div>
-          </div>
-          <div class="plan-detail">
-            <div class="plan-detail-label">Total Area</div>
-            <div class="plan-detail-value">44.72–44.89 sq.m</div>
-          </div>
-          <div class="plan-detail">
-            <div class="plan-detail-label">In Sq.ft.</div>
-            <div class="plan-detail-value">481–483 sq.ft</div>
-          </div>
+          <div class="plan-detail"><div class="plan-detail-label">Carpet Area</div><div class="plan-detail-value">40.06–40.24 sq.m</div></div>
+          <div class="plan-detail"><div class="plan-detail-label">Open Balcony</div><div class="plan-detail-value">4.65–4.66 sq.m</div></div>
+          <div class="plan-detail"><div class="plan-detail-label">Total Area</div><div class="plan-detail-value">44.72–44.89 sq.m</div></div>
+          <div class="plan-detail"><div class="plan-detail-label">In Sq.ft.</div><div class="plan-detail-value">481–483 sq.ft</div></div>
         </div>
         <ul class="plan-rooms">
           <li><span>Master Bedroom</span><span>9'10" × 11'3"</span></li>
@@ -1202,20 +1193,18 @@
         <a href="#contact" class="btn-primary">Enquire About 1 BHK</a>
       </div>
     </div>
-
-    <p style="font-size:0.65rem; color:var(--text-muted); margin-top:2rem; letter-spacing:0.05em;">
+    <p style="font-family:'DM Sans',sans-serif; font-size:0.72rem; font-weight:300; color:var(--text-muted); margin-top:2rem; letter-spacing:0.04em;">
       MahaRera Reg. No – B Wing: P52100079574 · Plans are indicative and subject to change.
     </p>
   </div>
 </section>
 
-<!-- ── PRICING SECTION ── -->
+<!-- PRICING -->
 <section id="pricing">
   <div class="pricing-inner">
     <p class="section-label reveal">B Wing · Pricing</p>
     <h2 class="section-title reveal">Transparent <em>Pricing</em></h2>
     <p class="section-body reveal">All-inclusive pricing with no hidden charges. The fixed price includes agreement value, stamp duty, registration, and GST.</p>
-
     <div class="pricing-table-wrap reveal">
       <table class="pricing-table">
         <thead>
@@ -1231,73 +1220,45 @@
           </tr>
         </thead>
         <tbody>
-          <!-- 2 BHK rows -->
-          <tr class="section-divider">
-            <td colspan="8">2 BHK</td>
-          </tr>
+          <tr class="section-divider"><td colspan="8">2 BHK</td></tr>
           <tr>
-            <td class="td-wing">B</td>
-            <td class="td-type">2 BHK</td>
-            <td class="td-area">621</td>
-            <td class="td-agreement">62,55,954</td>
-            <td>4,37,917</td>
-            <td>30,000</td>
-            <td>3,12,798</td>
+            <td class="td-wing">B</td><td class="td-type">2 BHK</td>
+            <td class="td-area">621</td><td class="td-agreement">62,55,954</td>
+            <td>4,37,917</td><td>30,000</td><td>3,12,798</td>
             <td class="td-fixed">₹ 70,36,668</td>
           </tr>
           <tr>
-            <td class="td-wing">B</td>
-            <td class="td-type">2 BHK</td>
-            <td class="td-area">679</td>
-            <td class="td-agreement">68,40,246</td>
-            <td>4,78,817</td>
-            <td>30,000</td>
-            <td>3,42,012</td>
+            <td class="td-wing">B</td><td class="td-type">2 BHK</td>
+            <td class="td-area">679</td><td class="td-agreement">68,40,246</td>
+            <td>4,78,817</td><td>30,000</td><td>3,42,012</td>
             <td class="td-fixed">₹ 76,91,076</td>
           </tr>
           <tr>
-            <td class="td-wing">B</td>
-            <td class="td-type">2 BHK</td>
-            <td class="td-area">686</td>
-            <td class="td-agreement">69,10,764</td>
-            <td>4,83,753</td>
-            <td>30,000</td>
-            <td>3,45,538</td>
+            <td class="td-wing">B</td><td class="td-type">2 BHK</td>
+            <td class="td-area">686</td><td class="td-agreement">69,10,764</td>
+            <td>4,83,753</td><td>30,000</td><td>3,45,538</td>
             <td class="td-fixed">₹ 77,70,056</td>
           </tr>
-          <!-- 1 BHK rows -->
-          <tr class="section-divider">
-            <td colspan="8">1 BHK</td>
-          </tr>
+          <tr class="section-divider"><td colspan="8">1 BHK</td></tr>
           <tr>
-            <td class="td-wing">B</td>
-            <td class="td-type">1 BHK</td>
-            <td class="td-area">481</td>
-            <td class="td-agreement">48,45,594</td>
-            <td>3,39,192</td>
-            <td>30,000</td>
-            <td>2,42,280</td>
+            <td class="td-wing">B</td><td class="td-type">1 BHK</td>
+            <td class="td-area">481</td><td class="td-agreement">48,45,594</td>
+            <td>3,39,192</td><td>30,000</td><td>2,42,280</td>
             <td class="td-fixed">₹ 54,57,065</td>
           </tr>
           <tr>
-            <td class="td-wing">B</td>
-            <td class="td-type">1 BHK</td>
-            <td class="td-area">483</td>
-            <td class="td-agreement">48,65,742</td>
-            <td>3,40,602</td>
-            <td>30,000</td>
-            <td>2,43,287</td>
+            <td class="td-wing">B</td><td class="td-type">1 BHK</td>
+            <td class="td-area">483</td><td class="td-agreement">48,65,742</td>
+            <td>3,40,602</td><td>30,000</td><td>2,43,287</td>
             <td class="td-fixed">₹ 54,79,631</td>
           </tr>
         </tbody>
       </table>
     </div>
-
     <p class="pricing-note reveal">
       All amounts in Indian Rupees (₹). Stamp Duty @ 7% · Registration fixed at ₹30,000 · GST @ 5% on Agreement Value.<br>
       Prices are indicative and subject to change without prior notice. MahaRera Reg. No. B Wing: P52100079574.
     </p>
-
     <div class="pricing-cta-row reveal">
       <a href="#contact" class="btn-primary">Get a Detailed Cost Sheet</a>
       <a href="#contact" class="btn-ghost">Schedule a Visit</a>
@@ -1346,7 +1307,7 @@
           <div class="loc-card-items">
             <span>Sinhgad Road <em>4.2km</em></span>
             <span>Navale Bridge <em>4.6km</em></span>
-            <span>Mumbai-Pune Highway <em>9.4km</em></span>
+            <span>Mumbai-Pune Hwy <em>9.4km</em></span>
           </div>
         </div>
       </div>
@@ -1354,7 +1315,7 @@
     <div class="map-placeholder reveal">
       <div class="map-pin"></div>
       <div class="map-address">Ambegaon Budruk, Pune 411 046</div>
-      <div style="font-size:0.7rem; color:var(--text-muted); margin-top:0.5rem;">Next to Sinhgad College Main Campus</div>
+      <div style="font-family:'DM Sans',sans-serif; font-size:0.78rem; font-weight:300; color:var(--text-muted); margin-top:0.5rem;">Next to Sinhgad College Main Campus</div>
     </div>
   </div>
 </section>
@@ -1367,22 +1328,10 @@
       <h2 class="section-title reveal">A Legacy of Fulfilling<br><em>Dreams Since 2006</em></h2>
       <p class="section-body reveal">Sneha Constructions (Riddhi Siddhi) combines experienced architects, engineers, and project managers to deliver exceptional results — on time, within budget, and to the highest standards.</p>
       <div class="legacy-stats reveal">
-        <div class="legacy-stat">
-          <div class="legacy-stat-num">20+</div>
-          <div class="legacy-stat-label">Years of Experience</div>
-        </div>
-        <div class="legacy-stat">
-          <div class="legacy-stat-num">20+</div>
-          <div class="legacy-stat-label">Projects Delivered</div>
-        </div>
-        <div class="legacy-stat">
-          <div class="legacy-stat-num">3.69L</div>
-          <div class="legacy-stat-label">Sq.ft. in Development</div>
-        </div>
-        <div class="legacy-stat">
-          <div class="legacy-stat-num">2006</div>
-          <div class="legacy-stat-label">Year Founded</div>
-        </div>
+        <div class="legacy-stat"><div class="legacy-stat-num">20+</div><div class="legacy-stat-label">Years of Experience</div></div>
+        <div class="legacy-stat"><div class="legacy-stat-num">20+</div><div class="legacy-stat-label">Projects Delivered</div></div>
+        <div class="legacy-stat"><div class="legacy-stat-num">3.69L</div><div class="legacy-stat-label">Sq.ft. in Development</div></div>
+        <div class="legacy-stat"><div class="legacy-stat-num">2006</div><div class="legacy-stat-label">Year Founded</div></div>
       </div>
     </div>
     <div class="legacy-timeline reveal">
@@ -1430,34 +1379,47 @@
     <p class="contact-address reveal">
       Site Address: Next to Sinhgad College Main Campus,<br>
       Ambegaon BK, Pune 411 046<br><br>
-      <a href="http://www.riddhisiddhikohinoor.com" style="color:var(--gold); text-decoration:none;">www.riddhisiddhikohinoor.com</a>
+      <a href="http://www.riddhisiddhikohinoor.com" style="color:var(--gold); text-decoration:none; font-weight:400;">www.riddhisiddhikohinoor.com</a>
     </p>
 
-    <form class="contact-form reveal" onsubmit="handleSubmit(event)">
+    <!-- UPDATED FORM WITH VALIDATION + WHATSAPP -->
+    <form class="contact-form reveal" id="enquiry-form" onsubmit="handleSubmit(event)" novalidate>
       <div class="form-field">
-        <label>Full Name</label>
-        <input type="text" placeholder="Your name" required>
+        <label for="field-name">Full Name *</label>
+        <input type="text" id="field-name" placeholder="Your full name" autocomplete="name">
+        <span class="field-error" id="err-name">Please enter your full name.</span>
       </div>
       <div class="form-field">
-        <label>Phone Number</label>
-        <input type="tel" placeholder="+91 00000 00000" required>
+        <label for="field-phone">Phone Number *</label>
+        <input type="tel" id="field-phone" placeholder="+91 00000 00000" autocomplete="tel">
+        <span class="field-error" id="err-phone">Please enter a valid 10-digit mobile number.</span>
       </div>
       <div class="form-field">
-        <label>Email Address</label>
-        <input type="email" placeholder="your@email.com">
+        <label for="field-email">Email Address *</label>
+        <input type="email" id="field-email" placeholder="your@email.com" autocomplete="email">
+        <span class="field-error" id="err-email">Please enter a valid email address.</span>
       </div>
       <div class="form-field">
-        <label>Interested In</label>
-        <select>
-          <option value="">Select unit type</option>
-          <option>1 BHK</option>
-          <option>2 BHK</option>
-          <option>Site Visit</option>
+        <label for="field-interest">Interested In *</label>
+        <select id="field-interest">
+          <option value="">— Select unit type —</option>
+          <option value="1 BHK">1 BHK</option>
+          <option value="2 BHK">2 BHK</option>
+          <option value="Site Visit">Site Visit</option>
         </select>
+        <span class="field-error" id="err-interest">Please select a unit type.</span>
       </div>
-      <button type="submit" class="form-submit">Schedule a Consultation</button>
+      <button type="submit" class="form-submit">
+        <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        Schedule a Consultation via WhatsApp
+      </button>
     </form>
-    <div id="form-success" style="display:none; margin-top:1.5rem; color:var(--gold); font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-style:italic;">Thank you. We'll be in touch shortly.</div>
+    <div id="form-success" style="display:none; margin-top:2rem; padding:2rem; border:1px solid rgba(201,168,76,0.3); background:rgba(201,168,76,0.05);">
+      <div style="color:var(--gold); font-family:'Playfair Display',serif; font-size:1.4rem; font-style:italic; margin-bottom:0.5rem;">Thank you!</div>
+      <div style="color:var(--text-muted); font-family:'DM Sans',sans-serif; font-size:0.9rem; font-weight:300;">Your enquiry has been sent via WhatsApp. Our team will be in touch shortly.</div>
+    </div>
   </div>
 </section>
 
@@ -1475,11 +1437,13 @@
 </footer>
 
 <script>
+  // ── NAV SCROLL ──
   const nav = document.getElementById('main-nav');
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 80);
   });
 
+  // ── SCROLL REVEAL ──
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
@@ -1491,6 +1455,7 @@
   }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
   reveals.forEach(el => observer.observe(el));
 
+  // ── PLAN TABS ──
   function switchPlan(type, btn) {
     document.querySelectorAll('.plan-content').forEach(el => el.classList.remove('active'));
     document.querySelectorAll('.plans-tab').forEach(el => el.classList.remove('active'));
@@ -1498,16 +1463,118 @@
     btn.classList.add('active');
   }
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    e.target.style.display = 'none';
-    document.getElementById('form-success').style.display = 'block';
-  }
-
+  // ── SMOOTH SCROLL ──
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       const target = document.querySelector(a.getAttribute('href'));
       if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+
+  // ── FORM VALIDATION + WHATSAPP ──
+  const WHATSAPP_NUMBER = '918956866051'; // country code + number, no +
+
+  function clearErrors() {
+    document.querySelectorAll('.field-error').forEach(el => el.classList.remove('show'));
+    document.querySelectorAll('.form-field input, .form-field select').forEach(el => el.classList.remove('error'));
+  }
+
+  function showError(fieldId, errId) {
+    document.getElementById(fieldId).classList.add('error');
+    document.getElementById(errId).classList.add('show');
+  }
+
+  function validateForm() {
+    clearErrors();
+    let valid = true;
+
+    const name = document.getElementById('field-name').value.trim();
+    const phone = document.getElementById('field-phone').value.trim();
+    const email = document.getElementById('field-email').value.trim();
+    const interest = document.getElementById('field-interest').value;
+
+    // Name: at least 2 characters
+    if (name.length < 2) {
+      showError('field-name', 'err-name');
+      valid = false;
+    }
+
+    // Phone: 10 digits (with optional +91 prefix or spaces/dashes)
+    const phoneDigits = phone.replace(/[\s\-\+]/g, '').replace(/^91/, '');
+    if (!/^\d{10}$/.test(phoneDigits)) {
+      showError('field-phone', 'err-phone');
+      valid = false;
+    }
+
+    // Email: basic format check
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      showError('field-email', 'err-email');
+      valid = false;
+    }
+
+    // Interest: must select something
+    if (!interest) {
+      showError('field-interest', 'err-interest');
+      valid = false;
+    }
+
+    return valid ? { name, phone, email, interest } : null;
+  }
+
+  function buildWhatsAppMessage(data) {
+    const lines = [
+      '🏠 *New Enquiry – Kohinoor by Riddhi Siddhi Tiara*',
+      '',
+      '👤 *Name:* ' + data.name,
+      '📱 *Phone:* ' + data.phone,
+      '📧 *Email:* ' + data.email,
+      '🏢 *Interested In:* ' + data.interest,
+      '',
+      '📍 _Ambegaon Budruk, Pune 411 046_',
+      '_MahaRera No: P52100079574_'
+    ];
+    return encodeURIComponent(lines.join('\n'));
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    const data = validateForm();
+    if (!data) {
+      // Scroll to first error
+      const firstError = document.querySelector('.field-error.show');
+      if (firstError) {
+        firstError.previousElementSibling.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      return;
+    }
+
+    const message = buildWhatsAppMessage(data);
+    const url = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + message;
+
+    // Show success message
+    document.getElementById('enquiry-form').style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+
+    // Open WhatsApp
+    window.open(url, '_blank');
+  }
+
+  // Live validation: clear error on input
+  ['field-name', 'field-phone', 'field-email', 'field-interest'].forEach(id => {
+    const el = document.getElementById(id);
+    el.addEventListener('input', () => {
+      el.classList.remove('error');
+      const errId = 'err-' + id.replace('field-', '');
+      const errEl = document.getElementById(errId);
+      if (errEl) errEl.classList.remove('show');
+    });
+    el.addEventListener('change', () => {
+      el.classList.remove('error');
+      const errId = 'err-' + id.replace('field-', '');
+      const errEl = document.getElementById(errId);
+      if (errEl) errEl.classList.remove('show');
     });
   });
 </script>
